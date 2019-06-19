@@ -1,0 +1,14 @@
+﻿@model string
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <form action="ShowDate" method="post">
+        <p>Input a date: <input type="date" name="inputDate" /></p>
+        <input type="submit" name="submit" />
+    </form>
+    <p>The date: @Model</p>
+</div>

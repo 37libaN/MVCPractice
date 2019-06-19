@@ -16,18 +16,8 @@ namespace MVCPractice.Controllers
         [HttpPost]
         public ActionResult RandomNumber(int inputNumberOne, int inputNumberTwo)
         {
-            int low, high;
-            if (inputNumberTwo < inputNumberOne)
-            {
-                high = inputNumberOne;
-                low = inputNumberTwo;
-            }
-            else
-            {
-                low = inputNumberOne;
-                high = inputNumberTwo;
-            }
-            int rand = new Random().Next(low, high);
+            int rand = new Random().Next(Math.Min(inputNumberOne, inputNumberTwo), 
+                Math.Max(inputNumberOne, inputNumberTwo));
             return View(viewName: "Index", model: rand);
         }
     }
