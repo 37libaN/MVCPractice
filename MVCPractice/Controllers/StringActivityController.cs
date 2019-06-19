@@ -11,12 +11,13 @@ namespace MVCPractice.Controllers
         // GET: StringActivity
         public ActionResult Index()
         {
-            return View(viewName: "Index", model: "All starts here");
+            return View(viewName: "Index", model: "What is Thomas?");
         }
         [HttpPost]
         public ActionResult SayHello(string inputString)
         {
-            return View(viewName: "Index", model: "Hello " + inputString);
+            string words = "Thomas is ";
+            return View(viewName: "Index", model: words + inputString + ".");
         }
     }
 }
